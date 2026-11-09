@@ -12,11 +12,9 @@ def reprint():
         print("\n")
 
 def main():
-    train1 = Train(random.randrange(25), random.randrange(20))
+    train1 = Train(random.randrange(20), random.randrange(20), random.randrange(2))
     trains.append(train1)
-    print(train1)
     updateMat()
-    #reprint()
 
 def updateMat():
     for i in trains:
@@ -28,4 +26,4 @@ def updateMat():
 starttime = time.monotonic()
 while True:
     main()
-    time.sleep(1.0 - ((time.monotonic() - starttime) % 1.0))
+    time.sleep(.5 - ((time.monotonic() - starttime) % .5))
