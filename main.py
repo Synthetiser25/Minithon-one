@@ -1,4 +1,4 @@
-import os
+import os, random, time
 from train import Train
 rows, cols = (25, 25)
 mat = [["." for j in range(rows)] for i in range (cols)]
@@ -12,7 +12,7 @@ def reprint():
         print("\n")
 
 def main():
-    train1 = Train(13, 5)
+    train1 = Train(random.randrange(25), random.randrange(20))
     trains.append(train1)
     print(train1)
     updateMat()
@@ -25,4 +25,7 @@ def updateMat():
             mat[j[1]][j[2]] = j[0]
     reprint()
 
-main()
+starttime = time.monotonic()
+while True:
+    main()
+    time.sleep(1.0 - ((time.monotonic() - starttime) % 1.0))
