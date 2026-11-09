@@ -4,6 +4,8 @@ rows, cols = (25, 25)
 mat = [["." for j in range(rows)] for i in range (cols)]
 trains = []
 
+interval = 0.5
+
 def reprint():
     os.system("clear")
     for i in range(rows):
@@ -26,4 +28,4 @@ def updateMat():
 starttime = time.monotonic()
 while True:
     main()
-    time.sleep(.5 - ((time.monotonic() - starttime) % .5))
+    time.sleep(interval - ((time.monotonic() - starttime) % interval))
